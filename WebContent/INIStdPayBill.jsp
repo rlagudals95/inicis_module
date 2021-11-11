@@ -87,7 +87,7 @@ function hppShow(){
 
 </head>
 <body bgcolor="#FFFFFF" text="#242424" leftmargin=0 topmargin=15 marginwidth=0 marginheight=0 bottommargin=0 rightmargin=0>
-	
+
 	<div style="padding:10px;background-color:#f3f3f3;width:100%;font-size:13px;color: #ffffff;background-color: #000000;text-align: center">
 		이니시스 표준결제 신용카드 빌링키 발급 샘플
 	</div>

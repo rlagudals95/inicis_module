@@ -24,9 +24,9 @@
 	//############################################
 
 	// 여기에 설정된 값은 Form 필드에 동일한 값으로 설정
-	String mid					= "INIpayTest";		// 가맹점 ID(가맹점 수정후 고정)					
+	String mid					= "INIpayTest";		// 가맹점 ID(가맹점 수정후 고정)				
 	
-	//인증
+	//인증						  ""
 	String signKey			    = "SU5JTElURV9UUklQTEVERVNfS0VZU1RS";	// 가맹점에 제공된 웹 표준 사인키(가맹점 수정후 고정)
 	String timestamp			= SignatureUtil.getTimestamp();			// util에 의해서 자동생성
 
@@ -53,9 +53,9 @@
 	// signature 데이터 생성 (모듈에서 자동으로 signParam을 알파벳 순으로 정렬후 NVP 방식으로 나열해 hash)
 	String signature = SignatureUtil.makeSignature(signParam);
 	
-	
+	System.out.println("signParam"+signParam);
 	/* 기타 */
-	String siteDomain = "http://127.0.0.1:8080/INIpayStdSample"; //가맹점 도메인 입력
+	String siteDomain = "http://localhost:8099/inicis_test/INIpayStdSample"; //가맹점 도메인 입력 // 로컬 테스트시 
 	// 페이지 URL에서 고정된 부분을 적는다. 
 	// Ex) returnURL이 http://localhost:8080INIpayStdSample/INIStdPayReturn.jsp 라면
 	// http://localhost:8080/INIpayStdSample 까지만 기입한다.
@@ -218,10 +218,11 @@
 												<br/><b>closeUrl</b> : payViewType='overlay','popup'시 취소버튼 클릭시 창닥기 처리 URL(가맹점에 맞게 설정)
 												<br/>close.jsp 샘플사용(생략가능, 미설정시 사용자에 의해 취소 버튼 클릭시 인증결과 페이지로 취소 결과를 보냅니다.)
 												<br/><input style="width:100%;" name="closeUrl" value="<%=siteDomain%>/close.jsp" >
-
+												<!-- <br/><input style="width:100%;" name="closeUrl" value="http://localhost:8099/inicis_test/close.jsp" >  -->
 												<br/><b>popupUrl</b> : payViewType='popup'시 팝업을 띄울수 있도록 처리해주는 URL(가맹점에 맞게 설정)
 												<br/>popup.jsp 샘플사용(생략가능,payViewType='popup'으로 사용시에는 반드시 설정)
 												<br/><input style="width:100%;" name="popupUrl" value="<%=siteDomain%>/popup.jsp" >
+												<!-- <br/><input style="width:100%;" name="popupUrl" value="http://localhost:8099/inicis_test/popup.jsp" > -->
 
 											</div>
 											
